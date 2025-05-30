@@ -12,11 +12,11 @@ async def on_ready():
     await tree.sync()
     print("Commandes synchronisées.")
 
-from commands import ping
-from commands import hello
+from commands import ping, hello, register
 
 ping.register(tree)
 hello.register(tree)
+register.register(tree)
 
 from utils.token import Token
 
