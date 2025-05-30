@@ -17,7 +17,7 @@ def register(tree: app_commands.CommandTree):
         for role in roles:
             if role.id == ALPHA_TESTER_ROLE_ID:
                 user_have_role = True
-            
+        
         if user_have_role:
             user_id = user.id
 
@@ -39,7 +39,3 @@ def register(tree: app_commands.CommandTree):
         
         else:
             await interaction.response.send_message(f"Tu n'a pas la permission de faire cette commande !", ephemeral=True)
-
-
-        
-        
