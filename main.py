@@ -1,9 +1,6 @@
 import discord
 from discord import app_commands
 
-from utils.token import Token
-
-
 intents = discord.Intents.default()
 client = discord.Client(intents=intents)
 tree = app_commands.CommandTree(client)
@@ -14,6 +11,14 @@ async def on_ready():
 
     await tree.sync()
     print("Commandes synchronisées.")
+
+from commands import ping
+from commands import hello
+
+ping.register(tree)
+hello.register(tree)
+
+from utils.token import Token
 
 token = Token()
 TOKEN = token.getToken()
